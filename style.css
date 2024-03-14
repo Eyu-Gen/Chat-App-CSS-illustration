@@ -26,18 +26,21 @@ body{
 }
 
 .container{
-    border: 1px solid red;
     width: 50%;
     position: relative;
 }
 
+
+/* Left Side of Page */
 .mobileSection{
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    align-items: end;
     justify-content: center;
-    height: 100vh;
+    min-height: 100vh;
 }
 
+/* Background Div */
 .backgroundLeft{
     width: 60%;
     height: 100vh;
@@ -45,41 +48,18 @@ body{
     border-bottom-right-radius: 200px;
     position: absolute;
     left: -100px;
-    top: -100px;
+    top: -10px;
     background-image: linear-gradient(to top, var(--gradientLeft), var(--gradientRight));
 }
 
-.mobile{
-    width: 50%;
-    position: relative;
-    border: 10px solid white;
-    border-radius: 30px;
+/* ...........Mobile Phone............ */
+/* Paragraph */
+.chatPara{
+    font-weight: 400;
+    font-size: 12px;
 }
 
-.mobileTop{
-    background-color: white;
-    width: 70%;
-    height: 25px;
-    position: absolute;
-    left: 35px;
-    top: -5px;
-    border-radius: 20px;
-}
-
-.chatHeading{
-    padding: 40px 10px 10px 10px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border-radius: 20px 20px 10px 10px;
-    background-image: linear-gradient(to right, var(--gradientLeft), var(--gradientRight));
-}
-
-.chatHeadLeft{
-    display: flex;
-    align-items: center;
-}
-
+/* Logos */
 .material-symbols-outlined {
   font-variation-settings:
   'FILL' 000000,
@@ -89,6 +69,50 @@ body{
   color: white;
 }
 
+img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.mobile{
+    width: 50%;
+    position: relative;
+    border: 10px solid white;
+    border-radius: 30px;
+    margin: 50px 100px;
+    background-color: var(--appBackground);
+}
+
+/* Mobile Top */
+.mobileTop{
+    background-color: white;
+    width: 60%;
+    height: 30px;
+    position: absolute;
+    left: 60px;
+    top: -10px;
+    border-radius: 15px;
+}
+
+/* Chat Heading Section */
+.chatHeading{
+    padding: 30px 10px 10px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 20px 20px 10px 10px;
+    background-image: linear-gradient(to right, var(--gradientLeft), var(--gradientRight));
+}
+
+/* Left Side of Chat Heading */
+.chatHeadLeft{
+    display: flex;
+    align-items: center;
+}
+
+
+/* Profile Section */
 .profileSection{
     display: flex;
 }
@@ -101,11 +125,8 @@ body{
     margin-right: 10px;
 }
 
-img{
+.profilePic{
     border-radius: 50%;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
     border: 2px solid white;
 }
 
@@ -115,12 +136,135 @@ img{
     margin-bottom: 3px;
 }
 
-.chatPara{
-    font-size: 12px;
+.availablePara{
+    color: var(--appHeading);
 }
 
-.availablePara{
-    opacity: 60%;
-    color: white;
-    font-weight: 200;
+/* Chat Section */
+.chatSection{
+    padding: 10px;
 }
+
+.messageGroup{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.messageLeft,
+.messageRight{
+    width: 65%;
+}
+
+/* Top Left Messages */
+.messageLeft{
+    margin: 5px 0px;
+    padding: 7px;
+    border-radius: 10px 10px 10px 5px;
+    background-color: var(--placeHolder);
+}
+
+.messageParaLeft{
+    color: var(--chatLeft);
+}
+
+/* Right Messages */
+.messageBoxRight{
+    align-items: end;
+}
+
+.messageRight{
+    padding: 7px;
+    display: flex;
+    margin-bottom: 10px;
+    border-radius: 10px 10px 5px 10px;
+    background-color: white;
+}
+
+.messageImages{
+    background: none;
+    margin: 10px 0px;
+    padding: 0;
+}
+
+.messageRight>.imageSection{
+    width: 50px;
+    margin-left: 10px;
+}
+
+.dogImage{
+    border-radius: 10px;
+}
+
+.messageParaRight{
+    color: var(--chatRight);
+}
+
+/* Price Section */
+.priceGroup{
+    width: 80%;
+}
+
+.priceBox{
+    margin-bottom: 10px;
+    border-radius: 10px 10px 10px 5px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-image: linear-gradient(to left, var(--gradientLeft), var(--gradientRight));
+}
+
+.leftPrice{
+    display: flex;
+}
+
+.time{
+    color: var(--gradientRight);
+    background-color: var(--gradientRight);
+    margin-right: 10px;
+}
+
+.pricePara{
+    color: white;
+    font-weight: 400;
+}
+
+.price{
+    font-weight: 600;
+    color: white;
+}
+
+/* Message Typing Section */
+.typingSection{
+    background-color: white;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px;
+    border-radius: 20px;
+}
+
+.message{
+    margin-left: 5px;
+    padding: 5px;
+    width: 90%;
+    overflow-y: scroll;
+    border: none;
+
+    &:focus{
+        outline: none;
+    }
+}
+
+.sendButton{
+    background-color: var(--submitButtom);
+    width: 10%;
+    aspect-ratio: 1/1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
