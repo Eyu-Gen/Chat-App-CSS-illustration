@@ -1,0 +1,126 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --appHeading: #d89eff;
+    --chatLeft: #9241c8;
+    --chatRight: #6e5d7e;
+    --placeHolder: #c6cacd;
+    --mainHeading: #3e2753;
+    --paragraph: #a39daa;
+    --gradientRight: #e942ff;
+    --gradientLeft: #8838ff;
+    --appBackground: #f5f3f7;
+    --submitButtom: #3e2753;
+    --radioButton: #e570ff;
+    --fontFamily: Rubik;
+}
+
+body{
+    height: 100vh;
+    background-color: var(--appBackground);
+    font-family: var(--fontFamily);
+}
+
+.container{
+    border: 1px solid red;
+    width: 50%;
+    position: relative;
+}
+
+.mobileSection{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.backgroundLeft{
+    width: 60%;
+    height: 100vh;
+    border-bottom-left-radius: 200px;
+    border-bottom-right-radius: 200px;
+    position: absolute;
+    left: -100px;
+    top: -100px;
+    background-image: linear-gradient(to top, var(--gradientLeft), var(--gradientRight));
+}
+
+.mobile{
+    width: 50%;
+    position: relative;
+    border: 10px solid white;
+    border-radius: 30px;
+}
+
+.mobileTop{
+    background-color: white;
+    width: 70%;
+    height: 25px;
+    position: absolute;
+    left: 35px;
+    top: -5px;
+    border-radius: 20px;
+}
+
+.chatHeading{
+    padding: 40px 10px 10px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 20px 20px 10px 10px;
+    background-image: linear-gradient(to right, var(--gradientLeft), var(--gradientRight));
+}
+
+.chatHeadLeft{
+    display: flex;
+    align-items: center;
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 000000,
+  'wght' 500,
+  'GRAD' 0,
+  'opsz' 24;
+  color: white;
+}
+
+.profileSection{
+    display: flex;
+}
+
+.profileSection>.imageSection{
+    width: 17%;
+    aspect-ratio: 1/1;
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+}
+
+img{
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: 2px solid white;
+}
+
+.namePara{
+    color: white;
+    font-weight: 500;
+    margin-bottom: 3px;
+}
+
+.chatPara{
+    font-size: 12px;
+}
+
+.availablePara{
+    opacity: 60%;
+    color: white;
+    font-weight: 200;
+}
