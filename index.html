@@ -13,10 +13,11 @@
 </head>
 <body>
     <main>
+        <!-- Background -->
+        <div class="backgroundLeft"></div>
+        
         <!-- Left side Mobile section -->
         <section class="container mobileSection">
-            <!-- Background -->
-            <div class="backgroundLeft"></div>
             <!-- Mobile -->
             <div class="mobile">
                 <!-- Mobile Top White Box -->
@@ -94,14 +95,20 @@
                     <div class="priceGroup">
                         <div class="priceBox">
                             <div class="leftPrice">
-                                <input type="radio" name="time" class="time">
+                                <input type="radio" id="time1" name="time" class="time">
+                                <label class="radio-label" for="time1">
+                                    <div></div>
+                                </label>
                                 <p class="chatPara pricePara">30 minute walk</p>
                             </div>
                             <p class="price">$29</p>
                         </div>
                         <div class="priceBox">
                             <div class="leftPrice">
-                                <input type="radio" name="time" class="time">
+                                <input type="radio" id="time2" name="time" class="time radio">
+                                <label class="radio-label" for="time2">
+                                    <div></div>
+                                </label>
                                 <p class="chatPara pricePara">1 hour walk</p>
                             </div>
                             <p class="price">$49</p>
@@ -119,9 +126,21 @@
                 </div>
             </div>
         </section>
-
+        
         <!-- Right Side details of webpage -->
-        <section class="container detailSection"></section>
+        <section class="container detailSection">
+            <!-- Paragraph -->
+            <p class="heading">Simple booking</p>
+            <p class="para detailPara">
+                Stay in touch with our dog walkers through the chat interface.
+                This makes it easy to discuss arrangements and make bookings. 
+                Once the walk has been completed you can rate your walker and
+                book again all through the chat.
+            </p>
+        </section>
+
+        <!-- Background -->
+        <div class="backgroundRight"></div>
     </main>
 </body>
 </html>

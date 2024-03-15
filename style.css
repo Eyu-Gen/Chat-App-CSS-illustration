@@ -20,9 +20,16 @@
 }
 
 body{
-    height: 100vh;
+    /* height: 100vh; */
     background-color: var(--appBackground);
     font-family: var(--fontFamily);
+    overflow-x: hidden;
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+main{
+    display: flex;
 }
 
 .container{
@@ -42,11 +49,11 @@ body{
 
 /* Background Div */
 .backgroundLeft{
-    width: 60%;
+    width: 30%;
     height: 90vh;
     border-bottom-left-radius: 200px;
     border-bottom-right-radius: 200px;
-    position: absolute;
+    position: fixed;
     left: -100px;
     top: -10px;
     background-image: linear-gradient(to top, var(--gradientLeft), var(--gradientRight));
@@ -82,6 +89,7 @@ img{
     border-radius: 30px;
     margin: 50px 100px;
     background-color: var(--appBackground);
+    box-shadow: 10px 10px 20px rgba(189, 188, 188, 0.504);
 }
 
 /* Mobile Top */
@@ -219,10 +227,35 @@ img{
     display: flex;
 }
 
-.time{
-    color: var(--gradientRight);
-    background-color: var(--gradientRight);
-    margin-right: 10px;
+input[type='radio'] {
+    display: none;
+}
+
+.radio-label {
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    border: 2px solid var(--radioButton);
+    margin-right: 5px;
+    position: relative;
+    display: grid;
+    place-items: center;
+
+
+    &::before {
+        position: absolute;
+        content: '';
+        height: 0;
+        width: 0;
+        border-radius: 50%;
+        background-color: var(--gradientLeft);
+        transition: all 0.3s linear;
+    }
+}
+
+input[type='radio']:checked+.radio-label::before {
+    height: 8px;
+    width: 8px;
 }
 
 .pricePara{
@@ -269,3 +302,122 @@ img{
     border-radius: 50%;
 }
 
+.backgroundRight{
+    width: 30%;
+    height: 90vh;
+    border-top-left-radius: 200px;
+    border-top-right-radius: 200px;
+    position: fixed;
+    right: -160px;
+    bottom: 0;
+    background-color: rgba(218, 218, 218, 0.353);
+    z-index: -1;
+}
+
+
+/* Right Side of Page */
+.detailSection{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    justify-content: center;
+}
+
+
+.heading{
+    font-size: 40px;
+    font-weight: 500;
+    color: var(--mainHeading);
+    margin-bottom: 20px;
+}
+
+.detailPara{
+    color: var(--paragraph);
+    width: 70%;
+}
+
+/* Responsive For Tablets */
+@media (max-width:850px) and  (min-width:550px){
+    main{
+        flex-direction: column;
+    }
+
+    .container, 
+    .detailSection>p{
+        width: 100%;
+    }
+
+    .mobileSection{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: fit-content;
+    }
+
+    .mobile{
+        width: 40%;
+    }
+
+    .backgroundRight{
+        bottom: -350px;
+        width: 60%;
+        right: -200px;
+    }
+
+    .backgroundLeft{
+        top: -350px;
+        width: 60%;
+        left: -200px;
+    }
+
+    .detailSection{
+        text-align: center;
+        padding: 50px 20px;
+    }
+}
+
+/* Responsive for Mobile*/
+@media only screen and (max-width:550px) {
+        main{
+            display: flex;
+            flex-direction: column;
+        }
+
+        .container{
+            width: 100%;
+            height: fit-content;
+        }
+
+        .mobileSection{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .mobile{
+            width: 80%;
+            margin-top: 50px;
+        }
+
+        .backgroundRight{
+            bottom: -250px;
+            width: 80%;
+            right: -150px;
+        }
+
+        .backgroundLeft{
+            top: -150px;
+            width: 80%;
+            left: -150px;
+        }
+
+        .detailSection{
+            padding: 50px 20px;
+        }
+
+        .detailSection>p{
+            width: 100%;
+            text-align: center;
+        }
+}
